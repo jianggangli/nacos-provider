@@ -1,9 +1,6 @@
 package com.entian.common.standard.session.jwt;
 
-import com.alibaba.fastjson.JSON;
 import com.entian.common.standard.resp.exception.APIException;
-import com.entian.common.standard.session.SessionContext;
-import com.entian.common.standard.session.SessionContextModel;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -53,13 +50,6 @@ public class JwtHandler {
 
     }
 
-    public static void main(String[] args) {
-        SessionContext sessionContext = new SessionContextModel("", "002", "zhangsan", "888", "客服经理");
-        JwtHandler jwtHandler = new JwtHandler();
-        String token = jwtHandler.generateToken(JSON.toJSONString(sessionContext));
-        log.info("token=[{}]", token);
-
-    }
 
     /**
      * 解析token
