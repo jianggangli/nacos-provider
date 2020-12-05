@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      config:
+        file-extension: properties
+        namespace: 9d11fe50-b3a1-454d-8328-c4f79a7eae1f
+        server-addr: 114.55.208.126:8848
+        shared-dataids: ${spring.application.name}-redis.properties
+        refreshable-dataids: ${spring.application.name}-redis.properties
+      discovery:
+        server-addr: 114.55.208.126:8848
+        namespace: 9d11fe50-b3a1-454d-8328-c4f79a7eae1f
+---
+spring:
+  profiles: dev
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      config:
+        file-extension: properties
+        namespace: 9d11fe50-b3a1-454d-8328-c4f79a7eae1f
+        server-addr: 114.55.208.126:8848
+        shared-dataids: ${spring.application.name}-redis.properties
+        refreshable-dataids: ${spring.application.name}-redis.properties
+      discovery:
+        server-addr: 114.55.208.126:8848
+        namespace: 9d11fe50-b3a1-454d-8328-c4f79a7eae1f
+---
+spring:
+  profiles: test
+  application:
+    name: service-provider
+  cloud:
+    nacos:
+      config:
+        file-extension: properties
+        namespace: 93d94332-3322-4e1f-97bc-8846014ae345
+        server-addr: 114.55.208.126:8848
+        shared-dataids: ${spring.application.name}-redis.properties
+        refreshable-dataids: ${spring.application.name}-redis.properties
+      discovery:
+        server-addr: 114.55.208.126:8848
+        namespace: 93d94332-3322-4e1f-97bc-8846014ae345
