@@ -1,8 +1,8 @@
-package com.entian.service.impl;
+package com.entian.rest;
 
 import com.entian.common.standard.resp.annotation.NotResponseBody;
 import com.entian.common.standard.resp.result.BaseResult;
-import com.entian.service.dto.UserDto;
+import com.entian.rest.dto.UserDto;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Api(tags = "接口返回统一规范")
 @RequestMapping("/standard")
-public class StandardRespService {
+public class StandardRespRest {
 
     @ApiOperation("获得单个用户")
     @GetMapping("/getNotResponseBody")

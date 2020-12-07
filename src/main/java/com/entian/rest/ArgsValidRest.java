@@ -1,4 +1,4 @@
-package com.entian.service.impl;
+package com.entian.rest;
 
 import com.entian.common.standard.resp.result.BaseResult;
 import com.entian.common.standard.session.SessionContext;
@@ -24,7 +24,7 @@ import javax.validation.constraints.NotNull;
 @RefreshScope
 @Api(tags = "入参校验@Validated")
 @Validated
-public class ArgsValidService {
+public class ArgsValidRest {
 
     @Value("${useLocalCache}")
     private String useLocalCache;

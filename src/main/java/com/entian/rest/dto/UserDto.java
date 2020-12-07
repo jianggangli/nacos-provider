@@ -1,4 +1,4 @@
-package com.entian.service.dto;
+package com.entian.rest.dto;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
