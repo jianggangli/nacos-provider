@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.inner.OptimisticLockerInnerInt
 import com.baomidou.mybatisplus.extension.plugins.inner.PaginationInnerInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.HashMap;
 
@@ -17,6 +18,7 @@ import java.util.HashMap;
  * 功能:
  */
 @Configuration
+@EnableTransactionManagement
 public class MybatisPlusConfig {
 
     /**
@@ -45,7 +47,6 @@ public class MybatisPlusConfig {
     public MySqlInjector sqlInjector() {
         return new MySqlInjector();
     }
-
 
     @Bean
     public MybatisPlusInterceptor mybatisPlusInterceptor() {
@@ -97,4 +98,5 @@ public class MybatisPlusConfig {
         interceptor.addInnerInterceptor(dynamicTableNameInnerInterceptor);
         return interceptor;
     }
+
 }

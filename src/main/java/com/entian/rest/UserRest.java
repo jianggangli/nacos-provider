@@ -2,6 +2,7 @@ package com.entian.rest;
 
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.entian.common.mybatis.sql.annotation.DataLog;
 import com.entian.service.entity.UserEntity;
 import com.entian.service.service.UserService;
 import io.swagger.annotations.Api;
@@ -9,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -145,9 +147,11 @@ public class UserRest {
      */
     @ApiOperation("更新用户信息")
     @GetMapping("/updateInfo")
-    public void updateInfo(){
+    @DataLog
+    @Transactional(rollbackFor = Exception.class)
+    public void updateInfo(String id){
         //根据实体中的ID去更新,其他字段如果值为null则不会更新该字段,参考yml配置文件
-        UserEntity userEntity = userService.getById("3d7a7a83e3f5e67c0089a75ce76aaae0");
+        UserEntity userEntity = userService.getById(id);
         userEntity.setAge(23);
         userService.updateById(userEntity);
     }
