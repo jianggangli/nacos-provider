@@ -38,7 +38,6 @@ import java.util.*;
 @AllArgsConstructor
 @Intercepts({
                     @Signature(type = StatementHandler.class, method = "update", args = {Statement.class})
-//                    ,@Signature(type = StatementHandler.class, method = "insert", args = {Statement.class})
 })
 public class DataUpdateInterceptor extends AbstractSqlParserHandler implements Interceptor {
 
