@@ -20,7 +20,7 @@ import javax.validation.constraints.NotNull;
  * 功能:
  */
 @Slf4j
-@RestController
+@RestController(value = "/ArgsValidRest")
 @RefreshScope
 @Api(tags = "入参校验@Validated")
 @Validated
