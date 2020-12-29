@@ -1,4 +1,4 @@
-package com.entian.common.methods;
+package com.entian.common.mybatis;
 
 import com.baomidou.mybatisplus.core.injector.AbstractMethod;
 import com.baomidou.mybatisplus.core.metadata.TableInfo;

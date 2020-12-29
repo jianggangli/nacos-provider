@@ -6,8 +6,7 @@ import com.baomidou.mybatisplus.core.injector.DefaultSqlInjector;
 import com.baomidou.mybatisplus.extension.injector.methods.AlwaysUpdateSomeColumnById;
 import com.baomidou.mybatisplus.extension.injector.methods.InsertBatchSomeColumn;
 import com.baomidou.mybatisplus.extension.injector.methods.LogicDeleteByIdWithFill;
-import com.entian.common.methods.DeleteAll;
-import com.entian.common.methods.FindOne;
+
 
 import java.util.List;
 
